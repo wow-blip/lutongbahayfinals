@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lutong Bahay - Homepage</title>
+		 <!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="landingpage.css" />
+</head>
+<body class="home">
+
+
+	<header class="site-header">
+		<div class="container header-row">
+			<div class="brand">
+				<img class="brand-logo" src="logo.png" alt="Lutong Bahay" />
+				<span class="brand-text">Lutong<br/>Bahay</span>
+			</div>
+
+			<nav class="main-nav" aria-label="Main Navigation">
+				<ul class="nav-list">
+					<li><a class="nav-link" href="add-recipe.html">+ Add a Recipe</a></li>
+					<li><a class="nav-link" href="about.html">About Us</a></li>
+					<li><a class="nav-link" href="account.html">Account</a></li>
+				</ul>
+				<div class="nav-actions">
+					<!-- login removed per request -->
+				</div>
+			</nav>
+
+			<button class="nav-toggle" aria-label="open menu">☰</button>
+		</div>
+	</header>
+
+
+		<section class="hero container">
+			<div class="hero-text">
+				<h1><a href="categories.html" style="text-decoration:none;color:inherit;">Lutong Bahay</a></h1>
+				<div class="search-container">
+					<input class="search-bar" type="text" placeholder="Search by dish, ingredient..." onkeypress="if(event.key==='Enter') search(this.value)" />
+				</div>
+			</div>
+		</section>
+
+
+		<section class="section container">
+			<h2><a href="categories.html" style="text-decoration:none;color:inherit;">Explore Categories</a></h2>
+			<div class="grid categories">
+<a href="native-cuisine.html" style="text-decoration: none; color: inherit;">
+<div class="card">
+<img src="sizzling-sisig.jpg" />
+<h3>Native / Indigenous Cuisine</h3>
+<p>Showcases dishes inspired by local Filipino traditions.</p>
+</div>
+</a>
+<a href="american-influenced.html" style="text-decoration: none; color: inherit;">
+<div class="card">
+<img src="Easy-Chicken-Gravy.jpg" />
+<h3>American Influenced</h3>
+<p>Modern Filipino dishes with American cooking styles.</p>
+</div>
+</a>
+<a href="snack-and-desert.html" style="text-decoration: none; color: inherit;">
+<div class="card">
+<img src="1397631520-Halo-halo_642.jpg" />
+<h3>Snacks & Desserts</h3>
+<p>Colorful and sweet Filipino delicacies.</p>
+</div>
+</a>
+</div>
+</section>
+
+
+		<section class="section container">
+			<h2>Recipe of the Week</h2>
+			<div class="recipe-week">
+<iframe src="https://www.youtube.com/embed/vuig2fo7ADI" class="recipe-img" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div>
+<h3>Sisig</h3>
+<p>By Anna Marie</p>
+<p>Sisig is a famous Filipino dish made from chopped pork—usually pig’s face and ears—seasoned with calamansi, onions, and chili peppers. Originating from Pampanga, it’s known for its sizzling, savory flavor and crispy texture. Sisig is often served on a hot plate and enjoyed as a main dish or pulutan (bar chow), representing the creativity and bold taste of Filipino cuisine</p>
+</div>
+</div>
+</section>
+
+
+		<section class="section container">
+			<h2>Native / Indigenous Cuisine</h2>
+			<div class="grid four-cols">
+<a href="pinakbet.html" style="text-decoration: none; color: inherit;"><div class="card"><img src="R.jpg" /><h3>Pinakbet</h3></div></a>
+<a href="laing.html" style="text-decoration: none; color: inherit;"><div class="card"><img src="laing-recipe-2.jpg" /><h3>Laing</h3></div></a>
+<div class="card"><img src="Sinigang-Recipe.jpg" /><h3>Sinigang</h3></div>
+<div class="card"><img src="1.jpg" /><h3>Paksiw</h3></div>
+</div>
+</section>
+
+
+		<section class="section container">
+			<h2>Your Own Recipes</h2>
+			<a href="add-recipe.html" class="create-box">Create Your Own Recipe</a>
+		</section>
+
+		<footer class="site-footer">
+			<div class="container footer-inner">
+				<div class="footer-links">
+					<ul>
+						<li><a href="terms.html">Terms of Service</a></li>
+						<li><a href="privacy.html">Privacy Policy</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="#">Contact Us</a></li>
+					</ul>
+				</div>
+				<div class="footer-right">
+					<div class="social">
+						<p class="small">FOLLOW US</p>
+						<div class="icons">
+							<a href="#"><img src="fb.png" alt="Facebook" style="width: 24px; height: 24px;"></a>
+							<a href="#"><img src="insta.png" alt="Instagram" style="width: 24px; height: 24px;"></a>
+							<a href="#"><img src="pinterest.png" alt="Pinterest" style="width: 24px; height: 24px;"></a>
+							<a href="#"><img src="yt.png" alt="YouTube" style="width: 24px; height: 24px;"></a>
+							<a href="#"><img src="x.png" alt="X" style="width: 24px; height: 24px;"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container copyright">
+				<hr />
+				<p>© 2025 All rights reserved.</p>
+			</div>
+		</footer>
+
+		<script src="landingpage.js"></script>
+		<script src="homepage.js"></script>
+	</body>
+</html>

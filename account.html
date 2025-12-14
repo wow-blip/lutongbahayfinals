@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Account — Lutong Bahay</title>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="landingpage.css" />
+</head>
+<body class="home">
+
+	<header class="site-header">
+		<div class="container header-row">
+      <div class="brand">
+        <a href="homepage.html"><img class="brand-logo" src="logo.png" alt="Lutong Bahay" /></a>
+        <a class="brand-text" href="homepage.html">Lutong<br/>Bahay</a>
+      </div>			<nav class="main-nav" aria-label="Main Navigation">
+				<ul class="nav-list">
+					<li><a class="nav-link" href="add-recipe.html">+ Add a Recipe</a></li>
+					<li><a class="nav-link" href="about.html">About Us</a></li>
+					<li><a class="nav-link" href="account.html">Account</a></li>
+				</ul>
+			</nav>
+
+			<button class="nav-toggle" aria-label="open menu">☰</button>
+		</div>
+	</header>
+
+	<main class="account-main">
+		<aside class="account-sidebar">
+			<ul>
+				<li><a href="#" onclick="showProfile('view')">My Profile</a></li>
+				<li><a href="#" onclick="showProfile('edit')" class="active">Edit Your Profile</a></li>
+				<li><a href="#" onclick="showProfile('settings')">Account Settings</a></li>
+				<li><a href="#" onclick="showProfile('recipes')">My Recipes</a></li>
+			</ul>
+		</aside>
+
+		<section class="account-content">
+			<div id="edit-profile">
+				<h1>Edit Your Profile</h1>
+
+				<div class="profile-photo">
+					<img id="profile-img" src="" alt="Profile Photo" style="display:none; width:100px; height:100px; border-radius:50%; margin:0 auto 10px;" />
+					<div class="photo-placeholder" id="photo-placeholder" onclick="document.getElementById('photo-upload').click()">
+						<span>📷</span>
+					</div>
+					<input type="file" id="photo-upload" accept="image/*" style="display:none;" />
+					<label for="photo-upload" class="upload-btn">Upload Photo</label>
+					<p>Upload a new profile photo</p>
+				</div>
+
+				<form class="profile-form">
+					<div class="form-group">
+						<label for="first-name">First Name</label>
+						<input type="text" id="first-name" value="Alina" />
+					</div>
+					<div class="form-group">
+						<label for="last-name">Last Name</label>
+						<input type="text" id="last-name" value="Donaa" />
+					</div>
+					<div class="form-group">
+						<label for="website">Website</label>
+						<input type="url" id="website" placeholder="https://" />
+					</div>
+					<div class="form-group">
+						<label for="about">About Me</label>
+						<textarea id="about" rows="4"></textarea>
+					</div>
+					<button type="submit" class="update-btn">Update Profile</button>
+				</form>
+			</div>
+
+			<div id="view-profile" style="display:none;">
+				<h1>My Profile</h1>
+
+				<div class="profile-photo">
+					<img id="view-profile-img" src="" alt="Profile Photo" style="width:100px; height:100px; border-radius:50%; margin:0 auto 10px;" />
+				</div>
+
+				<div class="profile-info">
+					<p><strong>First Name:</strong> <span id="view-first-name"></span></p>
+					<p><strong>Last Name:</strong> <span id="view-last-name"></span></p>
+					<p><strong>Website:</strong> <span id="view-website"></span></p>
+					<p><strong>About Me:</strong></p>
+					<p id="view-about"></p>
+				</div>
+			</div>
+
+			<div id="account-settings" style="display:none;">
+				<h1>Account Settings</h1>
+				<p>Manage your account preferences here.</p>
+				<button onclick="logout()" class="update-btn" style="background:#f44336;">Log Out</button>
+				<button onclick="deleteAccount()" class="update-btn" style="background:#f44336; margin-left:10px;">Delete Account</button>
+			</div>
+
+			<div id="my-recipes" style="display:none;">
+				<h1>My Recipes</h1>
+				<p>Your saved recipes:</p>
+				<a href="pinakbet.html" style="text-decoration: none; color: inherit;">
+					<div class="card">
+						<img src="R.jpg" />
+						<h3>Pinakbet</h3>
+					</div>
+				</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-content">
+			<div class="footer-links">
+				<ul>
+					<li><a href="terms.html">Terms of Service</a></li>
+					<li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="#">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="footer-right">
+				<div class="social">
+					<p class="small">FOLLOW US</p>
+					<div class="icons">
+						<a href="#"><img src="fb.png" alt="Facebook" style="width: 24px; height: 24px;"></a>
+						<a href="#"><img src="insta.png" alt="Instagram" style="width: 24px; height: 24px;"></a>
+						<a href="#"><img src="pinterest.png" alt="Pinterest" style="width: 24px; height: 24px;"></a>
+						<a href="#"><img src="yt.png" alt="YouTube" style="width: 24px; height: 24px;"></a>
+						<a href="#"><img src="x.png" alt="X" style="width: 24px; height: 24px;"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container copyright">
+			<hr />
+			<p>© 2025 All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script>
+		function showProfile(type) {
+			const editDiv = document.getElementById('edit-profile');
+			const viewDiv = document.getElementById('view-profile');
+			const settingsDiv = document.getElementById('account-settings');
+			const recipesDiv = document.getElementById('my-recipes');
+			const links = document.querySelectorAll('.account-sidebar a');
+
+			links.forEach(link => link.classList.remove('active'));
+
+			editDiv.style.display = 'none';
+			viewDiv.style.display = 'none';
+			settingsDiv.style.display = 'none';
+			recipesDiv.style.display = 'none';
+
+			if (type === 'view') {
+				viewDiv.style.display = 'block';
+				document.querySelector('a[onclick*="view"]').classList.add('active');
+				updateViewProfile();
+			} else if (type === 'settings') {
+				settingsDiv.style.display = 'block';
+				document.querySelector('a[onclick*="settings"]').classList.add('active');
+			} else if (type === 'recipes') {
+				recipesDiv.style.display = 'block';
+				document.querySelector('a[onclick*="recipes"]').classList.add('active');
+			} else {
+				editDiv.style.display = 'block';
+				document.querySelector('a[onclick*="edit"]').classList.add('active');
+			}
+		}
+
+		// Load saved data
+		document.addEventListener('DOMContentLoaded', () => {
+			const firstName = localStorage.getItem('firstName') || 'Alina';
+			const lastName = localStorage.getItem('lastName') || 'Donaa';
+			const about = localStorage.getItem('about') || '';
+			const website = localStorage.getItem('website') || '';
+			const profileImg = localStorage.getItem('profileImg');
+
+			document.getElementById('first-name').value = firstName;
+			document.getElementById('last-name').value = lastName;
+			document.getElementById('about').value = about;
+			document.getElementById('website').value = website;
+
+			if (profileImg) {
+				document.getElementById('profile-img').src = profileImg;
+				document.getElementById('profile-img').style.display = 'block';
+				document.getElementById('photo-placeholder').style.display = 'none';
+			}
+		});
+
+		function deleteAccount() {
+			if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+				localStorage.clear();
+				alert('Account deleted.');
+				window.location.href = 'login.html';
+			}
+		}
+
+		function logout() {
+			localStorage.removeItem('loggedIn');
+			window.location.href = 'login.html';
+		}
+
+		// Handle photo upload
+		document.getElementById('photo-upload').addEventListener('change', (e) => {
+			const file = e.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = (e) => {
+					const imgSrc = e.target.result;
+					document.getElementById('profile-img').src = imgSrc;
+					document.getElementById('profile-img').style.display = 'block';
+					document.getElementById('photo-placeholder').style.display = 'none';
+					localStorage.setItem('profileImg', imgSrc);
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+
+		// Handle form submit
+		document.querySelector('.profile-form').addEventListener('submit', (e) => {
+			e.preventDefault();
+			const firstName = document.getElementById('first-name').value;
+			const lastName = document.getElementById('last-name').value;
+			const about = document.getElementById('about').value;
+			const website = document.getElementById('website').value;
+
+			localStorage.setItem('firstName', firstName);
+			localStorage.setItem('lastName', lastName);
+			localStorage.setItem('about', about);
+			localStorage.setItem('website', website);
+
+			alert('Profile updated successfully!');
+		});
+	</script>
+	<script src="landingpage.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Sign Up — Lutong Bahay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landingpage.css">
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <a href="index.html"><img class="brand-logo" src="logo.png" alt="Lutong Bahay logo" /></a>
+        <a class="brand-text" href="index.html">Lutong<br/>Bahay</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth container two-col auth-container">
+      <div class="auth-form">
+        <h2>Sign Up <small><a href="login.html">log in instead</a></small></h2>
+
+        <form id="signupForm" novalidate>
+          <label for="first">First Name</label>
+          <input id="first" name="first" type="text" placeholder="Enter your First name" required />
+
+          <label for="last">Last Name</label>
+          <input id="last" name="last" type="text" placeholder="Enter your last name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required />
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required />
+
+          <label class="checkbox"><input id="terms" type="checkbox" /> By creating an account, I agree to our <a href="#">Terms of use</a> and <a href="#">Privacy Policy</a></label>
+
+          <button id="submitBtn" class="social-btn" type="submit">Create an account</button>
+
+          <div class="divider"><span>Or</span></div>
+
+          <button class="social-btn google" type="button"> <img src="googlwe.webp" alt="google"/> Continue with Google</button>
+        </form>
+      </div>
+
+      <div class="auth-image">
+        <img src="111.jpg" alt="food image" />
+      </div>
+    </section>
+  </main>
+
+  <script src="landingpage.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
